@@ -1,4 +1,13 @@
 BlueBelly::Application.routes.draw do
+  resources :servers do 
+    member do 
+      get 'df'
+      get 'top'
+      get 'lsof'
+    end
+  end
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

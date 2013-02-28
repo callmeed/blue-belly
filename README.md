@@ -23,3 +23,8 @@ Don't You Dare!
 -----
 
 Don't you dare use this to mess with production/live/important web servers yet. You'll surely be doomed if you do. 
+
+What Does the Name Mean? 
+-----
+
+An ode to the blue belly lizard of California. The favorite prey of my kids and cats. 

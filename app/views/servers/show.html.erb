@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @server.name %>
+</p>
+
+<p>
+  <b>Hostname:</b>
+  <%= @server.hostname %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @server.ip %>
+</p>
+
+<p>
+  <b>Ssh user:</b>
+  <%= @server.ssh_user %>
+</p>
+
+<p>
+  <b>Web server:</b>
+  <%= @server.web_server %>
+</p>
+
+<p>
+  <b>Sites path:</b>
+  <%= @server.sites_path %>
+</p>
+
+<p>
+  <b>Use sudo:</b>
+  <%= @server.use_sudo %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @server.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_server_path(@server) %> |
+<%= link_to 'Back', servers_path %>
