@@ -16,6 +16,11 @@ class Server < ActiveRecord::Base
     output = simple_command("sudo lsof -i")
   end
 
+  def ls_web
+    # ls on the web server path
+    output = simple_command("sudo ls -lha #{self.sites_path}")
+  end
+
   def simple_command(kommand)
     output = ""
     Net::SSH.start(self.ip, self.ssh_user) do |ssh|

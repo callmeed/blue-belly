@@ -27,6 +27,12 @@ class ServersController < ApplicationController
     render 'output'
   end
 
+  def ls
+    @server = Server.find(params[:id])
+    @output = @server.ls_web
+    render 'output'
+  end
+
   def lsof
     @server = Server.find(params[:id])
     @output = @server.lsof

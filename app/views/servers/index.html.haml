@@ -1,29 +1,37 @@
-%h1 Servers
-%table
-  %tr
-    %th Name
-    %th Hostname
-    %th Ip
-    %th Ssh user
-    %th Web server
-    %th Sites path
-    %th Use sudo
-    %th 
-    %th
-    %th
-    %th
-  - @servers.each do |server|
+.large-12.columns
+  %h1 
+    Servers
+    %small= link_to 'New Server', new_server_path
+  %table
     %tr
-      %td= server.name
-      %td= server.hostname
-      %td= server.ip
-      %td= server.ssh_user
-      %td= server.web_server
-      %td= server.sites_path
-      %td= server.use_sudo
-      %td= link_to 'df Output', df_server_path(server)
-      %td= link_to 'Show', server
-      %td= link_to 'Edit', edit_server_path(server)
-      %td= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'New Server', new_server_path
+      %th Name
+      %th Host / IP
+      %th SSH user
+      %th Type
+      %th Sudo?
+      %th Commands
+      %th
+      
+    - @servers.each do |server|
+      %tr
+        %td= link_to server.name, server
+        %td
+          = server.hostname
+          %br
+          = server.ip
+        %td= server.ssh_user
+        %td= server.web_server
+        %td= server.use_sudo
+        %td 
+          %ul.button-group
+            %li= link_to 'df', df_server_path(server), class: 'button small success'
+            %li= link_to 'top', top_server_path(server), class: 'button small success'
+            %li= link_to 'lsof', lsof_server_path(server), class: 'button small success'
+            %li= link_to 'ls', ls_server_path(server), class: 'button small success'
+
+          
+        %td
+          %ul.button-group
+            %li= link_to 'Edit', edit_server_path(server), class: 'button small alert'
+            %li= link_to 'Destroy', server, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small success alert'
+

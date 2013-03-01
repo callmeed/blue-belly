@@ -4,6 +4,7 @@ BlueBelly::Application.routes.draw do
       get 'df'
       get 'top'
       get 'lsof'
+      get 'ls'
     end
   end
 
